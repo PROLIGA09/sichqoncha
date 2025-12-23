@@ -1,8 +1,8 @@
 // ==============================================
-// SMM MARKET - TO'LIQ JAVASCRIPT KODI (1000+ QATOR)
+// SMM MARKET - JAVASCRIPT KODI
 // ==============================================
 
-// 1. MA'LUMOTLAR BAZASI (300+ qator)
+// 1. MA'LUMOTLAR BAZASI
 const tariffsData = {
     telegram: {
         premium: [
@@ -744,9 +744,9 @@ function saveCart() {
 
 // 12. CHECKOUT FUNCTIONS
 function checkout() {
-    console.log('💰 To'lov sahifasiga o'tish');
+    console.log('💰 To\'lov sahifasiga o\'tish');
     if (cart.length === 0) {
-        showToast('❌ Savatchangiz bo'sh!', 'error');
+        showToast('❌ Savatchangiz bo\'sh!', 'error');
         return;
     }
     showSection('checkoutSection');
@@ -783,127 +783,67 @@ function renderOrderDetails() {
     container.innerHTML = html;
 }
 
-// 13. TO'LOV FUNCTIONS
 function confirmPayment() {
-    const orderId = 'ORD-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+    const orderId = 'ORD-' + Date.now();
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
-    // Platforma aniqlash
-    let platform = '';
-    if (cart.length > 0) {
-        const firstItem = cart[0];
-        if (firstItem.id.includes('tg_')) platform = 'Telegram';
-        else if (firstItem.id.includes('ig_')) platform = 'Instagram';
-        else if (firstItem.id.includes('pubg_')) platform = 'PUBG';
-        else platform = 'Noma'lum';
-    }
     
     const newOrder = {
         id: orderId,
         items: [...cart],
         total: totalPrice,
         date: new Date().toISOString(),
-        status: 'pending',
-        platform: platform
+        status: 'pending'
     };
     
     orders.push(newOrder);
     saveOrders();
     
+    // Clear cart
     cart = [];
     saveCart();
     updateCartCount();
     
-    // Botga yuborish
-    sendOrderToBot(orderId, totalPrice, platform);
+    showToast('✅ Buyurtmangiz qabul qilindi! Admin paneliga yo\'naltirilmoqdasiz...', 'success');
     
-    showToast('✅ Buyurtma qabul qilindi! Botga yuborildi.', 'success');
-    showOrderConfirmation(orderId, totalPrice, platform);
+    // Show confirmation and redirect to admin panel
+    showOrderConfirmation(newOrder);
 }
 
-function sendOrderToBot(orderId, totalPrice, platform) {
-    // O'Z TELEGRAM BOT TOKENINGIZNI VA CHAT IDINGIZNI KIRITING
-    const botToken = '8411740919:AAGLbOX3F-0sdlJXDbdGM0HY9CSaVRRGuLE'; // BotFather dan oling
-    const chatId = '8074394669'; // @userinfobot orqali oling
-    
-    const message = `🛒 YANGI BUYURTMA!\n\n` +
-                   `📱 Platforma: ${platform}\n` +
-                   `📋 Buyurtma raqami: ${orderId}\n` +
-                   `💰 Jami to'lov: ${formatPrice(totalPrice)}\n` +
-                   `📅 Sana: ${new Date().toLocaleString('uz-UZ')}\n\n` +
-                   `✅ Mijoz to'lov qildi va buyurtmani tasdiqladi.`;
-    
-    if (botToken !== 'YOUR_BOT_TOKEN_HERE' && chatId !== 'YOUR_CHAT_ID_HERE') {
-        sendTelegramMessage(botToken, chatId, message);
-    } else {
-        console.log('🤖 Botga yuboriladigan xabar:', message);
-        console.log('⚠️ Eslatma: Telegram bot token va chat ID ni sozlang!');
-    }
-    
-    showToast('✅ Buyurtma raqamingiz botga yuborildi!', 'success');
-}
-
-function sendTelegramMessage(botToken, chatId, message) {
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    
-    const data = {
-        chat_id: chatId,
-        text: message,
-        parse_mode: 'HTML'
-    };
-    
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('✅ Xabar botga yuborildi:', data);
-    })
-    .catch(error => {
-        console.error('❌ Xabar yuborishda xatolik:', error);
-    });
-}
-
-function showOrderConfirmation(orderId, totalPrice, platform) {
+function showOrderConfirmation(order) {
     let html = `
         <div class="order-confirmation">
             <div class="confirmation-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h2>TO'LOV TASDIQLANDI!</h2>
-            <p>Buyurtma raqami: <strong>${orderId}</strong></p>
-            <p>Jami to'lov: <strong>${formatPrice(totalPrice)}</strong></p>
-            <p>Platforma: <strong>${platform}</strong></p>
-            <p>Sana: <strong>${new Date().toLocaleDateString('uz-UZ')}</strong></p>
+            <h2>BUYURTMA BERILDI!</h2>
+            <p>Buyurtma raqami: <strong>${order.id}</strong></p>
+            <p>Jami to'lov: <strong>${formatPrice(order.total)}</strong></p>
+            <p>Sana: <strong>${new Date(order.date).toLocaleDateString('uz-UZ')}</strong></p>
             
             <div class="instructions">
-                <h4><i class="fas fa-info-circle"></i> BUYURTMA RAQAMINGIZ BOTGA YUBORILDI!</h4>
+                <h4><i class="fas fa-info-circle"></i> DIQQAT! ENDI ADMIN PANELIGA O'TING:</h4>
                 
                 <div class="alert alert-info">
                     <i class="fas fa-exclamation-triangle"></i>
-                    <strong>BUYURTMA RAQAMINGIZNI SAQLAB QOYING!</strong>
+                    <strong>BUYURTMA RAQAMINGIZNI ADMINGA YUBORING!</strong>
                 </div>
                 
-                <h4><i class="fas fa-paper-plane"></i> Keyingi qadamlar:</h4>
+                <h4><i class="fas fa-paper-plane"></i> Qanday yuborish:</h4>
                 <ol>
-                    <li>Buyurtma raqamingiz: <strong>${orderId}</strong></li>
-                    <li>Bu raqam botga avtomatik yuborildi</li>
-                    <li>Admin siz bilan bog'lanadi</li>
-                    <li>Xizmat 1-24 soat ichida boshlanadi</li>
+                    <li>Quyidagi "ADMIN PANELIGA O'TISH" tugmasini bosing</li>
+                    <li>Telegram botga buyurtma raqamingizni yozing</li>
+                    <li>To'lov qilganligingizni tasdiqlang</li>
+                    <li>Kutish rejimiga o'ting</li>
                 </ol>
                 
-                <p class="note"><i class="fas fa-clock"></i> Agar 24 soat ichida admin bilan bog'lanmasangiz, quyidagi tugma orqali admin bilan bog'lanishingiz mumkin.</p>
+                <p class="note"><i class="fas fa-clock"></i> Xizmat 1-24 soat ichida boshlanadi.</p>
             </div>
             
             <div class="action-buttons">
-                <button onclick="contactAdmin('${orderId}')" class="btn-primary">
-                    <i class="fab fa-telegram"></i> ADMIN BILAN BOG'LANISH
+                <button onclick="openAdminPanel('${order.id}')" class="btn-primary">
+                    <i class="fab fa-telegram"></i> ADMINGA CHEK RASMINI TASHLASH
                 </button>
-                <button onclick="copyOrderId('${orderId}')" class="btn-secondary">
+                <button onclick="copyOrderId('${order.id}')" class="btn-secondary">
                     <i class="fas fa-copy"></i> BUYURTMA RAQAMINI NUSXALASH
                 </button>
                 <button onclick="goHome()" class="btn-outline">
@@ -917,47 +857,26 @@ function showOrderConfirmation(orderId, totalPrice, platform) {
     modal.style.display = 'flex';
 }
 
-// 14. ADMIN FUNCTIONS
-function contactAdmin(orderId = '') {
-    // O'Z TELEGRAM USERNOMINGIZNI KIRITING
-    const adminUsername = '@adhhamjonov'; // @ belgisisiz
+// 13. ADMIN PANEL FUNCTIONS
+function openAdminPanel(orderId) {
+    // Admin panel Telegram bot havolasi (o'z botingizni qo'ying)
+    const adminBotUrl = 'https://t.me/adhhamjonov'; // O'zgartiring
     
-    let message;
+    // Yangi oynada ochish
+    window.open(adminBotUrl, '_blank');
     
-    if (orderId === 'buyurtmasiz') {
-        message = 'Assalomu alaykum! Men SMM Market veb-sahifasidan yozayapman. Savolim bor edi.';
-    } else {
-        message = `Assalomu alaykum! Men SMM Market veb-sahifasidan buyurtma berdim.\n\n` +
-                 `📋 Buyurtma raqami: ${orderId}\n` +
-                 `ℹ️ To'lov haqida ma'lumot kerak.`;
-    }
+    // Modalni yopish
+    modal.style.display = 'none';
     
-    const telegramUrl = `https://t.me/${adminUsername}?text=${encodeURIComponent(message)}`;
-    window.open(telegramUrl, '_blank');
+    // Xabar ko'rsatish
+    showToast(`✅ Admin paneliga yo'naltirildi! Buyurtma raqamingiz: ${orderId}`, 'success');
     
-    console.log('📱 Admin bilan bog\'lanish:', orderId);
+    console.log('📱 Adminga chekni tashlash', orderId);
 }
 
-function copyOrderId(orderId) {
-    navigator.clipboard.writeText(orderId)
-        .then(() => {
-            showToast(`✅ Buyurtma raqami nusxalandi: ${orderId}`, 'success');
-        })
-        .catch(err => {
-            console.error('❌ Nusxalashda xatolik:', err);
-            const tempInput = document.createElement('input');
-            tempInput.value = orderId;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            showToast(`✅ Buyurtma raqami nusxalandi: ${orderId}`, 'success');
-        });
-}
-
-// 15. ORDERS FUNCTIONS
+// 14. ORDERS FUNCTIONS
 function showOrders() {
-    console.log('📋 Buyurtmalar sahifasiga o'tish');
+    console.log('📋 Buyurtmalar sahifasiga o\'tish');
     showSection('ordersSection');
     loadOrders();
 }
@@ -997,7 +916,7 @@ function loadOrders() {
                 <div>
                     <h4>${order.id}</h4>
                     <p>${new Date(order.date).toLocaleDateString('uz-UZ')}</p>
-                    <p>${order.platform || 'Noma\'lum'} - ${order.items.length} ta xizmat</p>
+                    <p>${order.items.length} ta xizmat</p>
                 </div>
                 <div>
                     <div class="${statusClass} order-status">${statusText}</div>
@@ -1014,7 +933,7 @@ function saveOrders() {
     localStorage.setItem('smm_orders', JSON.stringify(orders));
 }
 
-// 16. UTILITY FUNCTIONS
+// 15. UTILITY FUNCTIONS
 function formatPrice(price) {
     return price.toLocaleString('uz-UZ') + ' so\'m';
 }
@@ -1047,6 +966,37 @@ function checkFirstTimeVisit() {
     }
 }
 
+// 16. ADMIN FUNCTIONS
+function contactAdmin(orderId = '') {
+    const adminUsername = 'SMM_MARKET_ADMIN'; // O'zgartiring
+    const message = orderId === 'buyurtmasiz' 
+        ? 'Assalomu alaykum! Men SMM Market veb-sahifasidan yozayapman.'
+        : `Assalomu alaykum! Men buyurtma berdim.\nBuyurtma raqami: ${orderId}\n\nTo'lov qilganimni tasdiqlayman.`;
+    
+    const telegramUrl = `https://t.me/${adminUsername}?text=${encodeURIComponent(message)}`;
+    window.open(telegramUrl, '_blank');
+    
+    console.log('📱 Admin bilan bog\'lanish:', orderId);
+}
+
+function copyOrderId(orderId) {
+    navigator.clipboard.writeText(orderId)
+        .then(() => {
+            showToast(`✅ Buyurtma raqami nusxalandi: ${orderId}`, 'success');
+        })
+        .catch(err => {
+            console.error('❌ Nusxalashda xatolik:', err);
+            // Fallback method
+            const tempInput = document.createElement('input');
+            tempInput.value = orderId;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(`✅ Buyurtma raqami nusxalandi: ${orderId}`, 'success');
+        });
+}
+
 // 17. SAMPLE DATA
 if (!localStorage.getItem('smm_orders') || JSON.parse(localStorage.getItem('smm_orders')).length === 0) {
     orders = [
@@ -1056,9 +1006,8 @@ if (!localStorage.getItem('smm_orders') || JSON.parse(localStorage.getItem('smm_
                 { id: 'tg_premium_1', name: 'Telegram Premium - 1 Oylik', price: 50000, quantity: 1 }
             ],
             total: 50000,
-            date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
-            status: 'completed',
-            platform: 'Telegram'
+            date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(), // 3 kun oldin
+            status: 'completed'
         },
         {
             id: 'ORD-123457',
@@ -1066,19 +1015,8 @@ if (!localStorage.getItem('smm_orders') || JSON.parse(localStorage.getItem('smm_
                 { id: 'ig_likes_1', name: 'Instagram Layklar - 1000 like', price: 5000, quantity: 2 }
             ],
             total: 10000,
-            date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
-            status: 'processing',
-            platform: 'Instagram'
-        },
-        {
-            id: 'ORD-123458',
-            items: [
-                { id: 'pubg_1', name: 'PUBG UC - 🇺🇸 60 UC', price: 14000, quantity: 1 }
-            ],
-            total: 14000,
-            date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
-            status: 'completed',
-            platform: 'PUBG'
+            date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(), // 1 kun oldin
+            status: 'processing'
         }
     ];
     saveOrders();
@@ -1100,5 +1038,6 @@ window.goBackToInstagram = goBackToInstagram;
 window.goBackToCart = goBackToCart;
 window.contactAdmin = contactAdmin;
 window.copyOrderId = copyOrderId;
+window.openAdminPanel = openAdminPanel;
 
-console.log('🎉 SMM Market JavaScript kodi tayyor! (1000+ qator)');
+console.log('🎉 SMM Market JavaScript kodi tayyor!');

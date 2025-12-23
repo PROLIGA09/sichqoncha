@@ -1,3 +1,7 @@
+/* ==============================================
+   SMM MARKET - STYLE.CSS
+   ============================================== */
+
 :root {
     --primary: #4361ee;
     --primary-dark: #3a56d4;
@@ -22,7 +26,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: var(--dark);
     line-height: 1.6;
@@ -283,7 +287,7 @@ body {
     padding: 12px 25px;
     border: none;
     border-radius: var(--border-radius);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -861,7 +865,7 @@ body {
     color: var(--primary);
     border: 2px solid var(--primary);
     border-radius: var(--border-radius);
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
