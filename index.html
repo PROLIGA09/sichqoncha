@@ -3,74 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMM Market - Telegram, Instagram, PUBG UC</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SMM Market - Social Media Marketing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <i class="fas fa-rocket"></i>
-                    <span>SMM MARKET</span>
-                </div>
-                <div class="nav-links">
-                    <a href="#" id="homeBtn"><i class="fas fa-home"></i> Bosh Sahifa</a>
-                    <a href="#" id="servicesBtn"><i class="fas fa-list"></i> Xizmatlar</a>
-                    <a href="#" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i> Savatcha
-                        <span id="cartCount" class="cart-count">0</span>
-                    </a>
-                    <a href="#" id="ordersBtn"><i class="fas fa-clipboard-list"></i> Buyurtmalar</a>
-                </div>
-                <button class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>SMM Market yuklanmoqda...</p>
         </div>
-    </header>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shopping-cart"></i>
+                <span>SMM MARKET</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#" id="homeBtn"><i class="fas fa-home"></i> Bosh sahifa</a>
+                <a href="#" id="servicesBtn"><i class="fas fa-th-large"></i> Xizmatlar</a>
+                <a href="#" id="cartBtn" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount">0</span>
+                </a>
+                <a href="#" id="ordersBtn"><i class="fas fa-clipboard-list"></i> Buyurtmalar</a>
+                <div class="user-info">
+                    <i class="fas fa-user"></i>
+                    <span id="userName">Mehmon</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
     <!-- Main Content -->
-    <main>
+    <main class="main-content">
         <!-- Home Section -->
         <section id="homeSection" class="section active">
-            <div class="container">
-                <div class="welcome-card">
-                    <h1><i class="fas fa-hand-sparkles"></i> SALOM, <span id="userName">Mehmon</span>!</h1>
-                    <h2><i class="fas fa-robot"></i> SMM MARKET BOTIGA XUSH KELIBSIZ!</h2>
+            <div class="hero">
+                <div class="hero-content">
+                    <h1><span class="highlight">SMM MARKET</span> - Ijtimoiy tarmoqlar marketingi</h1>
+                    <p class="subtitle">Telegram, Instagram va PUBG uchun eng arzon va sifatli xizmatlar</p>
                     
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Yuqori sifatli xizmatlar</h3>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3>10,000+</h3>
+                                <p>Mamnun mijozlar</p>
+                            </div>
                         </div>
-                        <div class="feature">
+                        <div class="stat">
                             <i class="fas fa-bolt"></i>
-                            <h3>Tezkor yetkazib berish</h3>
+                            <div>
+                                <h3>24 soat</h3>
+                                <p>Tezkor xizmat</p>
+                            </div>
                         </div>
-                        <div class="feature">
+                        <div class="stat">
                             <i class="fas fa-shield-alt"></i>
-                            <h3>100% kafolat</h3>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-wallet"></i>
-                            <h3>Hamyonbop narxlar</h3>
+                            <div>
+                                <h3>100%</h3>
+                                <p>Xavfsizlik kafolati</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <p class="welcome-text">Xizmatlarimizdan foydalanish uchun pastdagi tugmani bosing 👇</p>
-                    
-                    <div class="action-buttons">
-                        <button id="showServicesBtn" class="btn-primary">
-                            <i class="fas fa-list"></i> XIZMATLARNI KO'RISH
+                    <div class="hero-buttons">
+                        <button class="btn-primary" id="showServicesBtn">
+                            <i class="fas fa-rocket"></i> Xizmatlarni ko'rish
                         </button>
-                        <button id="contactAdminBtn" class="btn-secondary">
-                            <i class="fas fa-headset"></i> ADMIN BILAN BOG'LANISH
+                        <button class="btn-secondary" id="contactAdminBtn">
+                            <i class="fab fa-telegram"></i> Admin bilan bog'lanish
                         </button>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="platform-icons">
+                        <div class="platform-icon telegram">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="platform-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="platform-icon pubg">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,271 +108,224 @@
         <section id="servicesSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2><i class="fas fa-crown"></i> BOSH XIZMATLAR MENYUSI</h2>
-                    <p>Quyidagi xizmat turlaridan birini tanlang:</p>
+                    <button onclick="goHome()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Ortga
+                    </button>
+                    <h2><i class="fas fa-th-large"></i> BARCHA XIZMATLAR</h2>
                 </div>
                 
                 <div class="services-grid">
+                    <!-- Telegram Card -->
                     <div class="service-card" onclick="showCategory('telegram')">
-                        <div class="service-icon">
+                        <div class="service-icon telegram">
                             <i class="fab fa-telegram"></i>
                         </div>
-                        <h3>Telegram Xizmatlari</h3>
-                        <p>Premium obunachilar, Stars, Gift</p>
+                        <h3>TELEGRAM</h3>
+                        <p>Premium obunachilar, Stars va Gift xizmatlari</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> 30 kun kafolat</span>
+                            <span><i class="fas fa-check"></i> Real foydalanuvchilar</span>
+                        </div>
                         <button class="btn-service">
                             Tanlash <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                     
+                    <!-- Instagram Card -->
                     <div class="service-card" onclick="showCategory('instagram')">
-                        <div class="service-icon">
+                        <div class="service-icon instagram">
                             <i class="fab fa-instagram"></i>
                         </div>
-                        <h3>Instagram Xizmatlari</h3>
-                        <p>Obunachilar, Layklar, Ko'rishlar</p>
+                        <h3>INSTAGRAM</h3>
+                        <p>Obunachilar, ko'rishlar va layklar</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> 90 kun kafolat</span>
+                            <span><i class="fas fa-check"></i> Sifatli obunachilar</span>
+                        </div>
                         <button class="btn-service">
                             Tanlash <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                     
+                    <!-- PUBG Card -->
                     <div class="service-card" onclick="showCategory('pubg')">
-                        <div class="service-icon">
+                        <div class="service-icon pubg">
                             <i class="fas fa-gamepad"></i>
                         </div>
-                        <h3>PUBG UC Xizmatlari</h3>
-                        <p>60 UC dan 8100 UC gacha</p>
+                        <h3>PUBG UC</h3>
+                        <p>Barcha serverlar uchun UC hisoblari</p>
+                        <div class="service-features">
+                            <span><i class="fas fa-check"></i> Darhol yetkazish</span>
+                            <span><i class="fas fa-check"></i> 100% xavfsiz</span>
+                        </div>
                         <button class="btn-service">
                             Tanlash <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
-                </div>
-                
-                <div class="back-button">
-                    <button onclick="goHome()" class="btn-back">
-                        <i class="fas fa-arrow-left"></i> Bosh Menyuga qaytish
-                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Telegram Services -->
+        <!-- Telegram Section -->
         <section id="telegramSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToServices()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToServices()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Xizmatlarga qaytish
                     </button>
                     <h2><i class="fab fa-telegram"></i> TELEGRAM XIZMATLARI</h2>
-                    <p>Quyidagi telegram xizmatlaridan birini tanlang:</p>
                 </div>
                 
-                <div class="category-grid">
-                    <div class="category-card" onclick="showTelegramService('premium')">
-                        <div class="category-icon premium">
-                            <i class="fas fa-star"></i>
+                <div class="services-subgrid">
+                    <div class="service-subcard" onclick="showTelegramService('premium')">
+                        <div class="service-subicon telegram">
+                            <i class="fas fa-crown"></i>
                         </div>
                         <h3>Premium Obunachilar</h3>
-                        <p>Yuqori sifat - 30 kun kafolat</p>
+                        <p>Yuqori sifatli real obunachilar</p>
                     </div>
                     
-                    <div class="category-card" onclick="showTelegramService('stars')">
-                        <div class="category-icon stars">
-                            <i class="fas fa-gem"></i>
+                    <div class="service-subcard" onclick="showTelegramService('stars')">
+                        <div class="service-subicon stars">
+                            <i class="fas fa-star"></i>
                         </div>
                         <h3>Stars (Yulduzlar)</h3>
-                        <p>Tezkor yetkazib berish - 100% xavfsiz</p>
+                        <p>Kanal va guruhlar uchun stars</p>
                     </div>
                     
-                    <div class="category-card" onclick="showTelegramService('gift')">
-                        <div class="category-icon gift">
+                    <div class="service-subcard" onclick="showTelegramService('gift')">
+                        <div class="service-subicon gift">
                             <i class="fas fa-gift"></i>
                         </div>
                         <h3>Gift (Sovg'alar)</h3>
-                        <p>Eng yangi va trend sovg'alar</p>
+                        <p>Har xil turdagi sovg'alar</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Telegram Premium -->
+        <!-- Telegram Premium Section -->
         <section id="telegramPremiumSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToTelegram()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToTelegram()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Telegramga qaytish
                     </button>
-                    <h2><i class="fas fa-star"></i> TELEGRAM PREMIUM OBUNACHILAR</h2>
-                    <p>Yuqori sifatli obunachilar - Aktiv va haqiqiy foydalanuvchilar - 30 kun kafolat</p>
+                    <h2><i class="fas fa-crown"></i> TELEGRAM PREMIUM OBUNACHILAR</h2>
                 </div>
                 
-                <div id="telegramPremiumTariffs" class="tariffs-grid">
-                    <!-- Premium tariflari bu yerda yuklanadi -->
+                <div class="tariffs-grid" id="telegramTariffs">
+                    <!-- Tariflar JavaScript orqali yuklanadi -->
                 </div>
             </div>
         </section>
 
-        <!-- Telegram Stars -->
+        <!-- Telegram Stars Section -->
         <section id="telegramStarsSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToTelegram()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToTelegram()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Telegramga qaytish
                     </button>
-                    <h2><i class="fas fa-gem"></i> TELEGRAM STARS (YULDUZLAR)</h2>
-                    <p>Tez va ishonchli yetkazib berish - Barcha kanallar va guruhlar uchun - 100% xavfsiz</p>
+                    <h2><i class="fas fa-star"></i> TELEGRAM STARS (YULDUZLAR)</h2>
                 </div>
                 
-                <div id="telegramStarsTariffs" class="tariffs-grid">
-                    <!-- Stars tariflari bu yerda yuklanadi -->
+                <div class="tariffs-grid" id="telegramStarsTariffs">
+                    <!-- Tariflar JavaScript orqali yuklanadi -->
                 </div>
             </div>
         </section>
 
-        <!-- Telegram Gift -->
+        <!-- Telegram Gift Section -->
         <section id="telegramGiftSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToTelegram()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToTelegram()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Telegramga qaytish
                     </button>
                     <h2><i class="fas fa-gift"></i> TELEGRAM GIFT (SOVG'ALAR)</h2>
-                    <p>Darhol yetkazib berish - Eng yangi va trend sovg'alar - Barcha uchun</p>
                 </div>
                 
-                <div id="telegramGiftTariffs" class="tariffs-grid">
-                    <!-- Gift tariflari bu yerda yuklanadi -->
+                <div class="tariffs-grid" id="telegramGiftTariffs">
+                    <!-- Tariflar JavaScript orqali yuklanadi -->
                 </div>
             </div>
         </section>
 
-        <!-- Instagram Services -->
+        <!-- Instagram Section -->
         <section id="instagramSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToServices()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToServices()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Xizmatlarga qaytish
                     </button>
                     <h2><i class="fab fa-instagram"></i> INSTAGRAM XIZMATLARI</h2>
-                    <p>Quyidagi instagram xizmatlaridan birini tanlang:</p>
                 </div>
                 
-                <div class="category-grid">
-                    <div class="category-card" onclick="showInstagramService('guaranteed')">
-                        <div class="category-icon guaranteed">
+                <div class="services-subgrid">
+                    <div class="service-subcard" onclick="showInstagramService('guaranteed')">
+                        <div class="service-subicon instagram">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3>Kafolatlangan Obunachilar</h3>
-                        <p>90 kun kafolat - Haqiqiy va aktiv</p>
+                        <h3>Kafolatlangan</h3>
+                        <p>90 kun kafolat bilan</p>
                     </div>
                     
-                    <div class="category-card" onclick="showInstagramService('cheap')">
-                        <div class="category-icon cheap">
+                    <div class="service-subcard" onclick="showInstagramService('cheap')">
+                        <div class="service-subicon cheap">
                             <i class="fas fa-wallet"></i>
                         </div>
-                        <h3>Arzon Obunachilar</h3>
-                        <p>Hamyonbop narxlar - O'rtacha sifat</p>
+                        <h3>Arzon</h3>
+                        <p>Hamyonbop narxlar</p>
                     </div>
                     
-                    <div class="category-card" onclick="showInstagramService('views')">
-                        <div class="category-icon views">
+                    <div class="service-subcard" onclick="showInstagramService('views')">
+                        <div class="service-subicon views">
                             <i class="fas fa-eye"></i>
                         </div>
-                        <h3>Ko'rishlar (Views)</h3>
-                        <p>Postlarni ommalashtirish - Organic ko'rishlar</p>
+                        <h3>Ko'rishlar</h3>
+                        <p>Postlarni ommalashtirish</p>
                     </div>
                     
-                    <div class="category-card" onclick="showInstagramService('likes')">
-                        <div class="category-icon likes">
+                    <div class="service-subcard" onclick="showInstagramService('likes')">
+                        <div class="service-subicon likes">
                             <i class="fas fa-heart"></i>
                         </div>
-                        <h3>Layklar (Likes)</h3>
-                        <p>Interaktivlikni oshirish - Tezkor yetkazib berish</p>
+                        <h3>Layklar</h3>
+                        <p>Interaktivlikni oshirish</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Instagram Guaranteed -->
+        <!-- Instagram Tariffs Section -->
         <section id="instagramGuaranteedSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToInstagram()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToInstagram()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Instagramga qaytish
                     </button>
                     <h2><i class="fas fa-shield-alt"></i> INSTAGRAM KAFOLATLANGAN OBUNACHILAR</h2>
-                    <p>90 kun kafolat - Haqiqiy va aktiv foydalanuvchilar - 24 soat ichida boshlanadi</p>
                 </div>
                 
-                <div id="instagramGuaranteedTariffs" class="tariffs-grid">
-                    <!-- Instagram guaranteed tariffs -->
+                <div class="tariffs-grid" id="instagramGuaranteedTariffs">
+                    <!-- Tariflar JavaScript orqali yuklanadi -->
                 </div>
             </div>
         </section>
 
-        <!-- Instagram Cheap -->
-        <section id="instagramCheapSection" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <button onclick="goBackToInstagram()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
-                    </button>
-                    <h2><i class="fas fa-wallet"></i> INSTAGRAM ARZON OBUNACHILAR</h2>
-                    <p>Hamyonbop narxlar - O'rtacha sifat - Tezkor yetkazib berish</p>
-                </div>
-                
-                <div id="instagramCheapTariffs" class="tariffs-grid">
-                    <!-- Instagram cheap tariffs -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Instagram Views -->
-        <section id="instagramViewsSection" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <button onclick="goBackToInstagram()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
-                    </button>
-                    <h2><i class="fas fa-eye"></i> INSTAGRAM KO'RISHLAR</h2>
-                    <p>Postlarni ommalashtirish - Organic ko'rishlar - Profil faolligini oshirish</p>
-                </div>
-                
-                <div id="instagramViewsTariffs" class="tariffs-grid">
-                    <!-- Instagram views tariffs -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Instagram Likes -->
-        <section id="instagramLikesSection" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <button onclick="goBackToInstagram()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
-                    </button>
-                    <h2><i class="fas fa-heart"></i> INSTAGRAM LAYKLAR</h2>
-                    <p>Interaktivlikni oshirish - Post reytingini yaxshilash - Tezkor yetkazib berish</p>
-                </div>
-                
-                <div id="instagramLikesTariffs" class="tariffs-grid">
-                    <!-- Instagram likes tariffs -->
-                </div>
-            </div>
-        </section>
-
-        <!-- PUBG UC -->
+        <!-- PUBG Section -->
         <section id="pubgSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToServices()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToServices()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Xizmatlarga qaytish
                     </button>
-                    <h2><i class="fas fa-gamepad"></i> PUBG UC XIZMATLARI</h2>
-                    <p>Darhol yetkazib berish - Barcha serverlar uchun - 100% xavfsiz</p>
+                    <h2><i class="fas fa-gamepad"></i> PUBG UC HISOBlARI</h2>
                 </div>
                 
-                <div id="pubgTariffs" class="tariffs-grid">
-                    <!-- PUBG tariffs will be loaded here -->
+                <div class="tariffs-grid" id="pubgTariffs">
+                    <!-- Tariflar JavaScript orqali yuklanadi -->
                 </div>
             </div>
         </section>
@@ -353,21 +334,27 @@
         <section id="cartSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2><i class="fas fa-shopping-cart"></i> SAVATCHAM</h2>
-                </div>
-                
-                <div id="cartItems" class="cart-items">
-                    <!-- Cart items will be loaded here -->
-                </div>
-                
-                <div class="cart-summary">
-                    <div class="summary-row">
-                        <span>Jami:</span>
-                        <span id="totalPrice">0 so'm</span>
-                    </div>
-                    <button id="checkoutBtn" class="btn-primary" onclick="checkout()">
-                        <i class="fas fa-credit-card"></i> BUYURTMA BERISH
+                    <button onclick="goHome()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Bosh sahifa
                     </button>
+                    <h2><i class="fas fa-shopping-cart"></i> SAVATCHANGIZ</h2>
+                </div>
+                
+                <div class="cart-container">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Savatdagi mahsulotlar JavaScript orqali yuklanadi -->
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <h3>Jami to'lov:</h3>
+                        <div class="total-price" id="totalPrice">0 so'm</div>
+                        <button class="btn-primary" id="checkoutBtn" onclick="checkout()">
+                            <i class="fas fa-credit-card"></i> To'lov qilish
+                        </button>
+                        <button class="btn-secondary" onclick="goBackToServices()">
+                            <i class="fas fa-plus"></i> Yana xizmat qo'shish
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -376,75 +363,120 @@
         <section id="checkoutSection" class="section">
             <div class="container">
                 <div class="section-header">
-                    <button onclick="goBackToCart()" class="btn-back-small">
-                        <i class="fas fa-arrow-left"></i> Orqaga
+                    <button onclick="goBackToCart()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Savatchaga qaytish
                     </button>
                     <h2><i class="fas fa-credit-card"></i> TO'LOV QILISH</h2>
                 </div>
                 
-                <div class="checkout-card">
-                    <div id="orderDetails">
-                        <!-- Order details will be loaded here -->
-                    </div>
-                    
-                    <div class="payment-info">
-                        <!-- Payment info will be loaded here -->
+                <div class="checkout-container">
+                    <div class="checkout-order">
+                        <div id="orderDetails">
+                            <!-- Buyurtma tafsilotlari JavaScript orqali yuklanadi -->
+                        </div>
+                        
+                        <div class="payment-methods">
+                            <h3><i class="fas fa-money-bill-wave"></i> To'lov usullari:</h3>
+                            <div class="methods">
+                                <div class="method">
+                                    <i class="fas fa-university"></i>
+                                    <div>
+                                        <h4>Bank hisob raqami</h4>
+                                        <p><strong>8600 12** **** 3456</strong></p>
+                                    </div>
+                                </div>
+                                <div class="method">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <h4>Click / Payme</h4>
+                                        <p><strong>+998 90 123 45 67</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-instruction">
+                            <h3><i class="fas fa-info-circle"></i> To'lov qilgandan so'ng:</h3>
+                            <div class="instruction-card">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <p>Yuqoridagi hisob raqamlaridan biriga to'lovni amalga oshiring</p>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <p>To'lov muvaffaqiyatli amalga oshirilgach, quyidagi tugmani bosing</p>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <p>Buyurtma raqamingiz botga avtomatik yuboriladi</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-action">
+                            <button class="btn-primary btn-lg" onclick="confirmPayment()">
+                                <i class="fas fa-check-circle"></i> To'lov qildim
+                            </button>
+                            <p class="note">To'lov qilganingizdan so'ng buyurtma raqamingiz botga yuboriladi</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Orders History -->
+        <!-- Orders Section -->
         <section id="ordersSection" class="section">
             <div class="container">
                 <div class="section-header">
+                    <button onclick="goHome()" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Bosh sahifa
+                    </button>
                     <h2><i class="fas fa-clipboard-list"></i> BUYURTMALARIM</h2>
                 </div>
                 
-                <div id="ordersList">
-                    <!-- Orders will be loaded here -->
+                <div class="orders-container">
+                    <div class="orders-list" id="ordersList">
+                        <!-- Buyurtmalar JavaScript orqali yuklanadi -->
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Modal for Order Confirmation -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal kontenti JavaScript orqali yuklanadi -->
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3><i class="fas fa-rocket"></i> SMM MARKET</h3>
-                    <p>Yuqori sifatli SMM xizmatlari</p>
+                <div class="footer-logo">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>SMM MARKET</span>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Aloqa</h3>
-                    <p><i class="fas fa-phone"></i> Telefon: +998 99 999 99 99</p>
-                    <p><i class="fas fa-envelope"></i> Email: info@smmmarket.uz</p>
+                <p>© 2024 SMM Market. Barcha huquqlar himoyalangan.</p>
+                <div class="footer-links">
+                    <a href="#" onclick="contactAdmin('buyurtmasiz')"><i class="fab fa-telegram"></i> Support</a>
+                    <span>|</span>
+                    <a href="#" onclick="showSection('servicesSection')">Xizmatlar</a>
+                    <span>|</span>
+                    <a href="#" onclick="showSection('ordersSection')">Buyurtmalar</a>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Ish vaqti</h3>
-                    <p><i class="fas fa-clock"></i> 24/7 ishlaymiz</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 SMM MARKET. Barcha huquqlar himoyalangan.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div id="modalBody"></div>
-        </div>
-    </div>
-
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="backend.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

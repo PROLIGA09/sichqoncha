@@ -1,61 +1,34 @@
-// ============================================
-// SMM MARKET - TO'LIQ ISHLAYDI (SODDA VERSIYA)
-// ============================================
+// ==============================================
+// SMM MARKET - TO'LIQ JAVASCRIPT KODI (1000+ QATOR)
+// ==============================================
 
-// Telegram Admin username (O'zgartiring)
-const ADMIN_USERNAME = "your_admin_username";
-
-// Barcha tarif ma'lumotlari
+// 1. MA'LUMOTLAR BAZASI (300+ qator)
 const tariffsData = {
     telegram: {
         premium: [
             {
                 id: 'tg_premium_1',
-                name: '1 Oylik Premium',
+                name: '1 Oylik',
                 description: 'Yuqori sifatli obunachilar',
                 price: 50000,
-                originalPrice: 60000,
-                features: [
-                    '✅ 30 kun kafolat',
-                    '✅ Aktiv va haqiqiy foydalanuvchilar',
-                    '✅ Darhol boshlanadi',
-                    '✅ Premium sifat'
-                ],
-                badge: '1️⃣',
-                type: 'premium',
-                duration: '1 oy'
+                features: ['✅ 30 kun kafolat', '✅ Aktiv va haqiqiy foydalanuvchilar', '✅ Darhol boshlanadi'],
+                badge: '1️⃣'
             },
             {
                 id: 'tg_premium_2',
-                name: '3 Oylik Premium',
+                name: '3 Oylik',
                 description: 'Chegirmali paket',
                 price: 170000,
-                originalPrice: 180000,
-                features: [
-                    '✅ 30 kun kafolat',
-                    '✅ Aktiv va haqiqiy foydalanuvchilar',
-                    '✅ 3 oy uchun katta chegirma',
-                    '✅ Uzoq muddatli foydalanish'
-                ],
-                badge: '2️⃣',
-                type: 'premium',
-                duration: '3 oy'
+                features: ['✅ 30 kun kafolat', '✅ Aktiv va haqiqiy foydalanuvchilar', '✅ 3 oy uchun katta chegirma'],
+                badge: '2️⃣'
             },
             {
                 id: 'tg_premium_3',
-                name: '6 Oylik Premium',
+                name: '6 Oylik',
                 description: 'Eng katta chegirma',
                 price: 225000,
-                originalPrice: 360000,
-                features: [
-                    '✅ 30 kun kafolat',
-                    '✅ Aktiv va haqiqiy foydalanuvchilar',
-                    '✅ 6 oy uchun super chegirma',
-                    '✅ Eng iqtisodiy variant'
-                ],
-                badge: '3️⃣',
-                type: 'premium',
-                duration: '6 oy'
+                features: ['✅ 30 kun kafolat', '✅ Aktiv va haqiqiy foydalanuvchilar', '✅ 6 oy uchun super chegirma'],
+                badge: '3️⃣'
             }
         ],
         stars: [
@@ -64,80 +37,40 @@ const tariffsData = {
                 name: '100 Stars',
                 description: 'Kichik paket',
                 price: 25000,
-                originalPrice: 30000,
-                features: [
-                    '✅ Barcha kanallar va guruhlar uchun',
-                    '✅ Tez yetkazib berish',
-                    '✅ 100% xavfsiz',
-                    '✅ Darhol faollashadi'
-                ],
-                badge: '1️⃣',
-                type: 'stars',
-                quantity: '100'
+                features: ['✅ Barcha kanallar va guruhlar uchun', '✅ Tez yetkazib berish', '✅ 100% xavfsiz'],
+                badge: '1️⃣'
             },
             {
                 id: 'tg_stars_2',
                 name: '500 Stars',
                 description: 'O\'rta paket',
                 price: 120000,
-                originalPrice: 125000,
-                features: [
-                    '✅ Barcha kanallar va guruhlar uchun',
-                    '✅ Tez yetkazib berish',
-                    '✅ 100% xavfsiz',
-                    '✅ Yaxshi miqdor'
-                ],
-                badge: '2️⃣',
-                type: 'stars',
-                quantity: '500'
+                features: ['✅ Barcha kanallar va guruhlar uchun', '✅ Tez yetkazib berish', '✅ 100% xavfsiz'],
+                badge: '2️⃣'
             },
             {
                 id: 'tg_stars_3',
                 name: '1000 Stars',
                 description: 'Katta paket',
                 price: 230000,
-                originalPrice: 250000,
-                features: [
-                    '✅ Barcha kanallar va guruhlar uchun',
-                    '✅ Tez yetkazib berish',
-                    '✅ 100% xavfsiz',
-                    '✅ Professional darajada'
-                ],
-                badge: '3️⃣',
-                type: 'stars',
-                quantity: '1000'
+                features: ['✅ Barcha kanallar va guruhlar uchun', '✅ Tez yetkazib berish', '✅ 100% xavfsiz'],
+                badge: '3️⃣'
             },
             {
                 id: 'tg_stars_4',
                 name: '5000 Stars',
                 description: 'Professional paket',
                 price: 1150000,
-                originalPrice: 1250000,
-                features: [
-                    '✅ Barcha kanallar va guruhlar uchun',
-                    '✅ Tez yetkazib berish',
-                    '✅ 100% xavfsiz',
-                    '✅ Biznes darajada'
-                ],
-                badge: '4️⃣',
-                type: 'stars',
-                quantity: '5000'
+                features: ['✅ Barcha kanallar va guruhlar uchun', '✅ Tez yetkazib berish', '✅ 100% xavfsiz'],
+                badge: '4️⃣'
             },
             {
                 id: 'tg_stars_5',
                 name: '10000 Stars',
                 description: 'Biznes paket',
                 price: 2250000,
-                originalPrice: 2500000,
-                features: [
-                    '✅ Barcha kanallar va guruhlar uchun',
-                    '✅ Tez yetkazib berish',
-                    '✅ 100% xavfsiz',
-                    '✅ Katta hajmdagi loyihalar uchun'
-                ],
-                badge: '5️⃣',
-                type: 'stars',
-                quantity: '10000'
+                features: ['✅ Barcha kanallar va guruhlar uchun', '✅ Tez yetkazib berish', '✅ 100% xavfsiz'],
+                badge: '5️⃣'
             }
         ],
         gift: [
@@ -147,14 +80,7 @@ const tariffsData = {
                 emoji: '🐻',
                 price: 5000,
                 description: 'Sevimli ayiqcha sovg\'asi',
-                features: [
-                    '✅ Darhol yetkazib berish',
-                    '✅ Eng yangi sovg\'a',
-                    '✅ Barcha uchun',
-                    '✅ 100% xavfsiz'
-                ],
-                type: 'gift',
-                badge: '1️⃣'
+                features: ['✅ Darhol yetkazib berish', '✅ Eng yangi sovg\'a', '✅ Barcha uchun']
             },
             {
                 id: 'tg_gift_2',
@@ -162,14 +88,7 @@ const tariffsData = {
                 emoji: '❤️',
                 price: 5000,
                 description: 'Muhabbat ramzi',
-                features: [
-                    '✅ Darhol yetkazib berish',
-                    '✅ Eng yangi sovg\'a',
-                    '✅ Barcha uchun',
-                    '✅ 100% xavfsiz'
-                ],
-                type: 'gift',
-                badge: '2️⃣'
+                features: ['✅ Darhol yetkazib berish', '✅ Eng yangi sovg\'a', '✅ Barcha uchun']
             },
             {
                 id: 'tg_gift_3',
@@ -177,14 +96,7 @@ const tariffsData = {
                 emoji: '🎁',
                 price: 7000,
                 description: 'Oddiy sovg\'a',
-                features: [
-                    '✅ Darhol yetkazib berish',
-                    '✅ Eng yangi sovg\'a',
-                    '✅ Barcha uchun',
-                    '✅ 100% xavfsiz'
-                ],
-                type: 'gift',
-                badge: '3️⃣'
+                features: ['✅ Darhol yetkazib berish', '✅ Eng yangi sovg\'a', '✅ Barcha uchun']
             },
             {
                 id: 'tg_gift_4',
@@ -192,14 +104,7 @@ const tariffsData = {
                 emoji: '🌹',
                 price: 7000,
                 description: 'Romantik atirgul',
-                features: [
-                    '✅ Darhol yetkazib berish',
-                    '✅ Eng yangi sovg\'a',
-                    '✅ Barcha uchun',
-                    '✅ 100% xavfsiz'
-                ],
-                type: 'gift',
-                badge: '4️⃣'
+                features: ['✅ Darhol yetkazib berish', '✅ Eng yangi sovg\'a', '✅ Barcha uchun']
             },
             {
                 id: 'tg_gift_5',
@@ -207,14 +112,7 @@ const tariffsData = {
                 emoji: '💐',
                 price: 13000,
                 description: 'Go\'zal guldasta',
-                features: [
-                    '✅ Darhol yetkazib berish',
-                    '✅ Eng yangi sovg\'a',
-                    '✅ Barcha uchun',
-                    '✅ 100% xavfsiz'
-                ],
-                type: 'gift',
-                badge: '5️⃣'
+                features: ['✅ Darhol yetkazib berish', '✅ Eng yangi sovg\'a', '✅ Barcha uchun']
             }
         ]
     },
@@ -224,33 +122,29 @@ const tariffsData = {
                 id: 'ig_guaranteed_1', 
                 name: '1000 obunachi', 
                 price: 15000, 
-                originalPrice: 20000,
                 badge: '1️⃣',
-                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi', '✅ Yuqori sifat']
+                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi']
             },
             { 
                 id: 'ig_guaranteed_2', 
                 name: '2000 obunachi', 
                 price: 23000, 
-                originalPrice: 30000,
                 badge: '2️⃣',
-                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi', '✅ Katta chegirma']
+                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi']
             },
             { 
                 id: 'ig_guaranteed_3', 
                 name: '3000 obunachi', 
                 price: 27000, 
-                originalPrice: 45000,
                 badge: '3️⃣',
-                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi', '✅ Super paket']
+                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi']
             },
             { 
                 id: 'ig_guaranteed_4', 
                 name: '5000 obunachi', 
                 price: 40000, 
-                originalPrice: 75000,
                 badge: '4️⃣',
-                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi', '✅ Biznes darajada']
+                features: ['✅ 90 kun kafolat', '✅ Haqiqiy va aktiv', '✅ 24 soat ichida boshlanadi']
             }
         ],
         cheap: [
@@ -258,33 +152,29 @@ const tariffsData = {
                 id: 'ig_cheap_1', 
                 name: '1000 obunachi', 
                 price: 11000, 
-                originalPrice: 15000,
                 badge: '1️⃣',
-                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish', '✅ Darhol boshlanadi']
+                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish']
             },
             { 
                 id: 'ig_cheap_2', 
                 name: '2000 obunachi', 
                 price: 16000, 
-                originalPrice: 22000,
                 badge: '2️⃣',
-                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish', '✅ Kichik loyihalar uchun']
+                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish']
             },
             { 
                 id: 'ig_cheap_3', 
                 name: '3000 obunachi', 
                 price: 20000, 
-                originalPrice: 33000,
                 badge: '3️⃣',
-                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish', '✅ O\'rta paket']
+                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish']
             },
             { 
                 id: 'ig_cheap_4', 
                 name: '5000 obunachi', 
                 price: 27000, 
-                originalPrice: 45000,
                 badge: '4️⃣',
-                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish', '✅ Katta hajm']
+                features: ['✅ Hamyonbop narxlar', '✅ O\'rtacha sifat', '✅ Tezkor yetkazib berish']
             }
         ],
         views: [
@@ -292,33 +182,29 @@ const tariffsData = {
                 id: 'ig_views_1', 
                 name: '1000 ko\'rish', 
                 price: 1000, 
-                originalPrice: 1500,
                 badge: '1️⃣',
-                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish', '✅ Darhol boshlanadi']
+                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish']
             },
             { 
                 id: 'ig_views_2', 
                 name: '5000 ko\'rish', 
                 price: 3000, 
-                originalPrice: 5000,
                 badge: '2️⃣',
-                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish', '✅ O\'rta hajm']
+                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish']
             },
             { 
                 id: 'ig_views_3', 
                 name: '10000 ko\'rish', 
                 price: 7000, 
-                originalPrice: 12000,
                 badge: '3️⃣',
-                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish', '✅ Katta hajm']
+                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish']
             },
             { 
                 id: 'ig_views_4', 
                 name: '50000 ko\'rish', 
                 price: 19000, 
-                originalPrice: 30000,
                 badge: '4️⃣',
-                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish', '✅ Viral post uchun']
+                features: ['✅ Postlarni ommalashtirish', '✅ Organic ko\'rishlar', '✅ Profil faolligini oshirish']
             }
         ],
         likes: [
@@ -326,33 +212,29 @@ const tariffsData = {
                 id: 'ig_likes_1', 
                 name: '1000 like', 
                 price: 5000, 
-                originalPrice: 7000,
                 badge: '1️⃣',
-                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish', '✅ Darhol boshlanadi']
+                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish']
             },
             { 
                 id: 'ig_likes_2', 
                 name: '5000 like', 
                 price: 25000, 
-                originalPrice: 35000,
                 badge: '2️⃣',
-                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish', '✅ O\'rta hajm']
+                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish']
             },
             { 
                 id: 'ig_likes_3', 
                 name: '10000 like', 
                 price: 50000, 
-                originalPrice: 70000,
                 badge: '3️⃣',
-                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish', '✅ Katta hajm']
+                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish']
             },
             { 
                 id: 'ig_likes_4', 
                 name: '50000 like', 
                 price: 140000, 
-                originalPrice: 200000,
                 badge: '4️⃣',
-                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish', '✅ Viral post uchun']
+                features: ['✅ Interaktivlikni oshirish', '✅ Post reytingini yaxshilash', '✅ Tezkor yetkazib berish']
             }
         ]
     },
@@ -362,69 +244,57 @@ const tariffsData = {
             name: '60 UC', 
             flag: '🇺🇸', 
             price: 14000, 
-            originalPrice: 15000,
             badge: '1️⃣',
-            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz', '✅ Kichik paket']
+            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz']
         },
         { 
             id: 'pubg_2', 
             name: '325 UC', 
             flag: '🇺🇸', 
             price: 66000, 
-            originalPrice: 70000,
             badge: '2️⃣',
-            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz', '✅ O\'rta paket']
+            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz']
         },
         { 
             id: 'pubg_3', 
             name: '660 UC', 
             flag: '🇺🇸', 
             price: 134000, 
-            originalPrice: 150000,
             badge: '3️⃣',
-            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz', '✅ Katta paket']
+            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz']
         },
         { 
             id: 'pubg_4', 
             name: '1800 UC', 
             flag: '🇺🇸', 
             price: 335000, 
-            originalPrice: 380000,
             badge: '4️⃣',
-            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz', '✅ Katta chegirma']
+            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz']
         },
         { 
             id: 'pubg_5', 
             name: '3850 UC', 
             flag: '🇺🇸', 
             price: 650000, 
-            originalPrice: 700000,
             badge: '5️⃣',
-            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz', '✅ Professional paket']
+            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz']
         },
         { 
             id: 'pubg_6', 
             name: '8100 UC', 
             flag: '🇺🇸', 
             price: 1620000, 
-            originalPrice: 1800000,
             badge: '6️⃣',
-            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz', '✅ Ultimate paket']
+            features: ['✅ Darhol yetkazib berish', '✅ Barcha serverlar uchun', '✅ 100% xavfsiz']
         }
     ]
 };
 
-// ============================================
-// STATE MANAGEMENT
-// ============================================
-
+// 2. STATE MANAGEMENT
 let cart = JSON.parse(localStorage.getItem('smm_cart')) || [];
 let orders = JSON.parse(localStorage.getItem('smm_orders')) || [];
 
-// ============================================
-// DOM ELEMENTS
-// ============================================
-
+// 3. DOM ELEMENTS
 const sections = document.querySelectorAll('.section');
 const modal = document.getElementById('modal');
 const closeModal = document.querySelector('.close-modal');
@@ -432,10 +302,7 @@ const cartCount = document.getElementById('cartCount');
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
-// ============================================
-// TOASTR CONFIGURATION
-// ============================================
-
+// 4. TOASTR CONFIG
 toastr.options = {
     positionClass: 'toast-top-right',
     progressBar: true,
@@ -443,113 +310,114 @@ toastr.options = {
     closeButton: true
 };
 
-// ============================================
-// INITIALIZATION
-// ============================================
-
+// 5. INITIALIZE
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 SMM Market veb-sahifasi yuklandi!');
+    // Hide loading screen
+    setTimeout(() => {
+        document.getElementById('loading').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+        }, 500);
+    }, 1000);
+    
+    console.log('🚀 SMM Market ishga tushdi!');
     
     updateCartCount();
     loadUserName();
     setupEventListeners();
     loadOrders();
-    
-    // Agar foydalanuvchi birinchi marta kelsa, ismini so'rash
-    if (!localStorage.getItem('smm_visited')) {
-        setTimeout(() => {
-            const name = prompt('Ismingizni kiriting:', 'Mehmon');
-            if (name && name.trim() !== '') {
-                localStorage.setItem('smm_userName', name);
-                document.getElementById('userName').textContent = name;
-            }
-            localStorage.setItem('smm_visited', 'true');
-        }, 1000);
-    }
+    checkFirstTimeVisit();
 });
 
-// ============================================
-// EVENT LISTENERS
-// ============================================
-
+// 6. EVENT LISTENERS
 function setupEventListeners() {
-    console.log('🔧 Event listenerlar sozlanmoqda...');
+    console.log('🔧 Event listenerlar o\'rnatilmoqda...');
     
     // Navigation buttons
-    document.getElementById('homeBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        showSection('homeSection');
-    });
+    if (document.getElementById('homeBtn')) {
+        document.getElementById('homeBtn').onclick = (e) => {
+            e.preventDefault();
+            showSection('homeSection');
+        };
+    }
     
-    document.getElementById('servicesBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        showSection('servicesSection');
-    });
+    if (document.getElementById('servicesBtn')) {
+        document.getElementById('servicesBtn').onclick = (e) => {
+            e.preventDefault();
+            showSection('servicesSection');
+        };
+    }
     
-    document.getElementById('cartBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        showCart();
-    });
+    if (document.getElementById('cartBtn')) {
+        document.getElementById('cartBtn').onclick = (e) => {
+            e.preventDefault();
+            showCart();
+        };
+    }
     
-    document.getElementById('ordersBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        showOrders();
-    });
+    if (document.getElementById('ordersBtn')) {
+        document.getElementById('ordersBtn').onclick = (e) => {
+            e.preventDefault();
+            showOrders();
+        };
+    }
     
     // Main buttons
-    document.getElementById('showServicesBtn').addEventListener('click', function() {
-        showSection('servicesSection');
-    });
+    if (document.getElementById('showServicesBtn')) {
+        document.getElementById('showServicesBtn').onclick = () => {
+            showSection('servicesSection');
+        };
+    }
     
-    document.getElementById('contactAdminBtn').addEventListener('click', function() {
-        window.open(`https://t.me/${ADMIN_USERNAME}`, '_blank');
-    });
+    if (document.getElementById('contactAdminBtn')) {
+        document.getElementById('contactAdminBtn').onclick = () => {
+            contactAdmin('buyurtmasiz');
+        };
+    }
     
     // Mobile menu
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-    });
+    if (menuToggle) {
+        menuToggle.onclick = () => {
+            navLinks.classList.toggle('active');
+        };
+    }
     
     // Modal close
-    closeModal.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
+    if (closeModal) {
+        closeModal.onclick = () => {
+            modal.style.display = 'none';
+        };
+    }
     
-    // Close modal when clicking outside
-    window.addEventListener('click', function(e) {
+    // Close modal on outside click
+    window.onclick = (e) => {
         if (e.target === modal) {
             modal.style.display = 'none';
         }
-    });
+    };
     
-    // Close mobile menu when clicking on link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function() {
-            navLinks.classList.remove('active');
-        });
-    });
+    // Checkout button
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    if (checkoutBtn) {
+        checkoutBtn.onclick = checkout;
+    }
     
-    console.log('✅ Barcha event listenerlar qo\'shildi');
+    console.log('✅ Barcha event listenerlar o\'rnatildi');
 }
 
-// ============================================
-// NAVIGATION FUNCTIONS
-// ============================================
-
+// 7. NAVIGATION FUNCTIONS
 function showSection(sectionId) {
     console.log('🔄 Sahifaga o\'tish:', sectionId);
     
-    // Hide all sections
     sections.forEach(section => {
         section.classList.remove('active');
     });
     
-    // Show target section
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
         targetSection.classList.add('active');
         
-        // Load content if needed
+        // Load tariffs if needed
         if (sectionId === 'telegramPremiumSection') {
             loadTelegramTariffs('premium');
         } else if (sectionId === 'telegramStarsSection') {
@@ -558,25 +426,21 @@ function showSection(sectionId) {
             loadTelegramTariffs('gift');
         } else if (sectionId === 'instagramGuaranteedSection') {
             loadInstagramTariffs('guaranteed');
-        } else if (sectionId === 'instagramCheapSection') {
-            loadInstagramTariffs('cheap');
-        } else if (sectionId === 'instagramViewsSection') {
-            loadInstagramTariffs('views');
-        } else if (sectionId === 'instagramLikesSection') {
-            loadInstagramTariffs('likes');
         } else if (sectionId === 'pubgSection') {
             loadPubgTariffs();
         }
         
         // Close mobile menu
-        navLinks.classList.remove('active');
+        if (navLinks) {
+            navLinks.classList.remove('active');
+        }
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
     }
 }
 
-// ============================================
-// SERVICE NAVIGATION
-// ============================================
-
+// 8. CATEGORY NAVIGATION
 function showCategory(category) {
     console.log('🎯 Kategoriya tanlandi:', category);
     
@@ -611,27 +475,11 @@ function showTelegramService(service) {
 
 function showInstagramService(service) {
     console.log('📸 Instagram xizmati tanlandi:', service);
-    
-    switch(service) {
-        case 'guaranteed':
-            showSection('instagramGuaranteedSection');
-            break;
-        case 'cheap':
-            showSection('instagramCheapSection');
-            break;
-        case 'views':
-            showSection('instagramViewsSection');
-            break;
-        case 'likes':
-            showSection('instagramLikesSection');
-            break;
-    }
+    showSection('instagramGuaranteedSection');
+    loadInstagramTariffs(service);
 }
 
-// ============================================
-// BACK NAVIGATION
-// ============================================
-
+// 9. BACK FUNCTIONS
 function goHome() {
     showSection('homeSection');
 }
@@ -652,10 +500,7 @@ function goBackToCart() {
     showCart();
 }
 
-// ============================================
-// TARIFF LOADING FUNCTIONS
-// ============================================
-
+// 10. LOAD TARIFFS
 function loadTelegramTariffs(serviceType) {
     console.log('📊 Telegram tariflari yuklanmoqda:', serviceType);
     
@@ -664,7 +509,7 @@ function loadTelegramTariffs(serviceType) {
     
     switch(serviceType) {
         case 'premium':
-            sectionId = 'telegramPremiumTariffs';
+            sectionId = 'telegramTariffs';
             break;
         case 'stars':
             sectionId = 'telegramStarsTariffs';
@@ -672,6 +517,8 @@ function loadTelegramTariffs(serviceType) {
         case 'gift':
             sectionId = 'telegramGiftTariffs';
             break;
+        default:
+            return;
     }
     
     const container = document.getElementById(sectionId);
@@ -679,29 +526,18 @@ function loadTelegramTariffs(serviceType) {
     
     let html = '';
     tariffs.forEach(tariff => {
-        const discount = tariff.originalPrice ? 
-            Math.round(((tariff.originalPrice - tariff.price) / tariff.originalPrice) * 100) : 0;
-        
         html += `
             <div class="tariff-card">
                 <div class="tariff-header">
-                    <span class="tariff-badge">${tariff.badge}</span>
-                    <div>
-                        ${tariff.originalPrice ? `
-                            <span class="original-price">${formatPrice(tariff.originalPrice)}</span>
-                        ` : ''}
-                        <span class="tariff-price">${formatPrice(tariff.price)}</span>
-                        ${discount > 0 ? `
-                            <div class="discount-badge">-${discount}%</div>
-                        ` : ''}
-                    </div>
+                    <span class="tariff-badge">${tariff.badge || ''}</span>
+                    <span class="tariff-price">${formatPrice(tariff.price)}</span>
                 </div>
                 <h3>${tariff.emoji ? tariff.emoji + ' ' : ''}${tariff.name}</h3>
                 <p>${tariff.description}</p>
                 <ul class="tariff-features">
                     ${tariff.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
                 </ul>
-                <button class="btn-service" onclick="addToCart('${tariff.id}', 'Telegram ${tariff.type === 'premium' ? 'Premium' : tariff.type === 'stars' ? 'Stars' : 'Gift'} - ${tariff.name}', ${tariff.price})">
+                <button class="btn-service" onclick="addToCart('${tariff.id}', 'Telegram ${serviceType === 'premium' ? 'Premium' : serviceType === 'stars' ? 'Stars' : 'Gift'} - ${tariff.name}', ${tariff.price})">
                     <i class="fas fa-cart-plus"></i> Savatchaga qo'shish
                 </button>
             </div>
@@ -715,58 +551,31 @@ function loadInstagramTariffs(serviceType) {
     console.log('📊 Instagram tariflari yuklanmoqda:', serviceType);
     
     const tariffs = tariffsData.instagram[serviceType];
-    let sectionId, title, icon;
+    const container = document.getElementById('instagramGuaranteedTariffs');
     
+    if (!container || !tariffs) return;
+    
+    let serviceName = '';
     switch(serviceType) {
-        case 'guaranteed':
-            sectionId = 'instagramGuaranteedTariffs';
-            title = 'INSTAGRAM KAFOLATLANGAN OBUNACHILAR';
-            icon = 'fas fa-shield-alt';
-            break;
-        case 'cheap':
-            sectionId = 'instagramCheapTariffs';
-            title = 'INSTAGRAM ARZON OBUNACHILAR';
-            icon = 'fas fa-wallet';
-            break;
-        case 'views':
-            sectionId = 'instagramViewsTariffs';
-            title = 'INSTAGRAM KO\'RISHLAR';
-            icon = 'fas fa-eye';
-            break;
-        case 'likes':
-            sectionId = 'instagramLikesTariffs';
-            title = 'INSTAGRAM LAYKLAR';
-            icon = 'fas fa-heart';
-            break;
+        case 'guaranteed': serviceName = 'Kafolatlangan'; break;
+        case 'cheap': serviceName = 'Arzon'; break;
+        case 'views': serviceName = 'Ko\'rishlar'; break;
+        case 'likes': serviceName = 'Layklar'; break;
     }
-    
-    const container = document.getElementById(sectionId);
-    if (!container) return;
     
     let html = '';
     tariffs.forEach(tariff => {
-        const discount = tariff.originalPrice ? 
-            Math.round(((tariff.originalPrice - tariff.price) / tariff.originalPrice) * 100) : 0;
-        
         html += `
             <div class="tariff-card">
                 <div class="tariff-header">
                     <span class="tariff-badge">${tariff.badge}</span>
-                    <div>
-                        ${tariff.originalPrice ? `
-                            <span class="original-price">${formatPrice(tariff.originalPrice)}</span>
-                        ` : ''}
-                        <span class="tariff-price">${formatPrice(tariff.price)}</span>
-                        ${discount > 0 ? `
-                            <div class="discount-badge">-${discount}%</div>
-                        ` : ''}
-                    </div>
+                    <span class="tariff-price">${formatPrice(tariff.price)}</span>
                 </div>
                 <h3>${tariff.name}</h3>
                 <ul class="tariff-features">
                     ${tariff.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
                 </ul>
-                <button class="btn-service" onclick="addToCart('${tariff.id}', 'Instagram ${serviceType === 'guaranteed' ? 'Kafolatlangan' : serviceType === 'cheap' ? 'Arzon' : serviceType === 'views' ? 'Ko\'rishlar' : 'Layklar'} - ${tariff.name}', ${tariff.price})">
+                <button class="btn-service" onclick="addToCart('${tariff.id}', 'Instagram ${serviceName} - ${tariff.name}', ${tariff.price})">
                     <i class="fas fa-cart-plus"></i> Savatchaga qo'shish
                 </button>
             </div>
@@ -775,10 +584,17 @@ function loadInstagramTariffs(serviceType) {
     
     container.innerHTML = html;
     
-    // Update section title
-    const titleElement = document.querySelector(`#${sectionId.replace('Tariffs', 'Section')} h2`);
-    if (titleElement) {
-        titleElement.innerHTML = `<i class="${icon}"></i> ${title}`;
+    // Update title
+    const titleMap = {
+        'guaranteed': 'KAFOLATLANGAN OBUNACHILAR',
+        'cheap': 'ARZON OBUNACHILAR',
+        'views': 'KO\'RISHLAR',
+        'likes': 'LAYKLAR'
+    };
+    
+    const titleElement = document.querySelector('#instagramGuaranteedSection h2');
+    if (titleElement && titleMap[serviceType]) {
+        titleElement.innerHTML = `<i class="${serviceType === 'guaranteed' ? 'fas fa-shield-alt' : serviceType === 'cheap' ? 'fas fa-wallet' : serviceType === 'views' ? 'fas fa-eye' : 'fas fa-heart'}"></i> INSTAGRAM ${titleMap[serviceType]}`;
     }
 }
 
@@ -792,22 +608,11 @@ function loadPubgTariffs() {
     
     let html = '';
     tariffs.forEach(tariff => {
-        const discount = tariff.originalPrice ? 
-            Math.round(((tariff.originalPrice - tariff.price) / tariff.originalPrice) * 100) : 0;
-        
         html += `
             <div class="tariff-card">
                 <div class="tariff-header">
                     <span class="tariff-badge">${tariff.badge}</span>
-                    <div>
-                        ${tariff.originalPrice ? `
-                            <span class="original-price">${formatPrice(tariff.originalPrice)}</span>
-                        ` : ''}
-                        <span class="tariff-price">${formatPrice(tariff.price)}</span>
-                        ${discount > 0 ? `
-                            <div class="discount-badge">-${discount}%</div>
-                        ` : ''}
-                    </div>
+                    <span class="tariff-price">${formatPrice(tariff.price)}</span>
                 </div>
                 <h3>${tariff.flag} ${tariff.name}</h3>
                 <ul class="tariff-features">
@@ -823,23 +628,14 @@ function loadPubgTariffs() {
     container.innerHTML = html;
 }
 
-// ============================================
-// CART FUNCTIONS (MUAMMONI TEGILADIGAN QISMI)
-// ============================================
-
-// Global addToCart function
-window.addToCart = function(id, name, price) {
-    console.log('➕ Savatchaga qo\'shish ishlayapti:', id, name, price);
+// 11. CART FUNCTIONS
+function addToCart(id, name, price) {
+    console.log('➕ Savatchaga qo\'shish:', name);
     
-    // TOAST XABARI - BIRINCHI ISHLAYDI
-    showToast(`✅ "${name}" savatchaga qo'shildi!`, 'success');
-    
-    // Check if item already exists
     const existingItem = cart.find(item => item.id === id);
     
     if (existingItem) {
         existingItem.quantity += 1;
-        console.log('✅ Miqdor oshirildi:', existingItem);
     } else {
         cart.push({
             id: id,
@@ -848,34 +644,31 @@ window.addToCart = function(id, name, price) {
             quantity: 1,
             date: new Date().toISOString()
         });
-        console.log('✅ Yangi mahsulot qo\'shildi:', name);
     }
     
-    // Update cart count
     updateCartCount();
-    
-    // Save to localStorage
     saveCart();
-    
-    // Konsolga chiqarish
-    console.log('🛒 Joriy savat:', cart);
-    console.log('🔢 Savatdagi mahsulotlar soni:', cart.length);
+    showToast(`✅ "${name}" savatchaga qo'shildi!`, 'success');
 }
 
 function updateCartCount() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
-    console.log('🔄 Savat soni yangilandi:', totalItems);
+    if (cartCount) {
+        cartCount.textContent = totalItems;
+        cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
 }
 
 function showCart() {
+    console.log('🛒 Savatcha ko\'rsatilmoqda');
     showSection('cartSection');
     renderCartItems();
 }
 
 function renderCartItems() {
     const container = document.getElementById('cartItems');
-    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    
+    if (!container) return;
     
     if (cart.length === 0) {
         container.innerHTML = `
@@ -890,13 +683,16 @@ function renderCartItems() {
         `;
         document.getElementById('totalPrice').textContent = '0 so\'m';
         document.getElementById('checkoutBtn').disabled = true;
-        console.log('🛒 Savat bo\'sh');
         return;
     }
     
     let html = '';
+    let totalPrice = 0;
+    
     cart.forEach((item, index) => {
         const itemTotal = item.price * item.quantity;
+        totalPrice += itemTotal;
+        
         html += `
             <div class="cart-item">
                 <div class="cart-item-info">
@@ -907,9 +703,7 @@ function renderCartItems() {
                         <button onclick="updateQuantity(${index}, 1)" class="quantity-btn">+</button>
                     </div>
                 </div>
-                <div class="cart-item-price">
-                    ${formatPrice(itemTotal)}
-                </div>
+                <div class="cart-item-price">${formatPrice(itemTotal)}</div>
                 <button onclick="removeFromCart(${index})" class="remove-item">
                     <i class="fas fa-trash"></i>
                 </button>
@@ -920,8 +714,6 @@ function renderCartItems() {
     container.innerHTML = html;
     document.getElementById('totalPrice').textContent = formatPrice(totalPrice);
     document.getElementById('checkoutBtn').disabled = false;
-    
-    console.log('✅ Savat mahsulotlari ko\'rsatildi:', cart.length, 'ta mahsulot');
 }
 
 function updateQuantity(index, change) {
@@ -936,26 +728,27 @@ function updateQuantity(index, change) {
     renderCartItems();
 }
 
-window.removeFromCart = function(index) {
+function removeFromCart(index) {
     if (confirm('Bu xizmatni savatchadan olib tashlamoqchimisiz?')) {
-        cart.splice(index, 1);
+        const removedItem = cart.splice(index, 1)[0];
         updateCartCount();
         saveCart();
         renderCartItems();
-        showToast('🗑️ Mahsulot savatchadan olib tashlandi', 'info');
+        showToast(`🗑️ "${removedItem.name}" savatchadan olib tashlandi`, 'info');
     }
 }
 
 function saveCart() {
     localStorage.setItem('smm_cart', JSON.stringify(cart));
-    console.log('💾 Savat localStorage ga saqlandi');
 }
 
-// ============================================
-// CHECKOUT FUNCTIONS
-// ============================================
-
+// 12. CHECKOUT FUNCTIONS
 function checkout() {
+    console.log('💰 To'lov sahifasiga o'tish');
+    if (cart.length === 0) {
+        showToast('❌ Savatchangiz bo'sh!', 'error');
+        return;
+    }
     showSection('checkoutSection');
     renderOrderDetails();
 }
@@ -965,149 +758,156 @@ function renderOrderDetails() {
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
     let html = `
-        <div class="order-summary">
-            <h3><i class="fas fa-shopping-bag"></i> BUYURTMA TAFSILOTLARI</h3>
-            <div class="order-items-list">
+        <h3><i class="fas fa-shopping-bag"></i> BUYURTMA TAFSILOTLARI</h3>
+        <div class="order-items">
     `;
     
-    cart.forEach((item, index) => {
+    cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         html += `
-            <div class="order-item-detail">
-                <div class="item-info">
-                    <span class="item-name">${item.name}</span>
-                    <span class="item-quantity">${item.quantity} x ${formatPrice(item.price)}</span>
-                </div>
-                <span class="item-total">${formatPrice(itemTotal)}</span>
+            <div class="order-item-summary">
+                <span>${item.name}</span>
+                <span>${item.quantity} x ${formatPrice(item.price)} = ${formatPrice(itemTotal)}</span>
             </div>
         `;
     });
     
     html += `
-            </div>
-            <div class="order-total-summary">
-                <span><strong>Jami to'lov:</strong></span>
-                <span class="total-amount"><strong>${formatPrice(totalPrice)}</strong></span>
-            </div>
         </div>
-        
-        <div class="payment-info">
-            <h3><i class="fas fa-credit-card"></i> TO'LOV KARTASI:</h3>
-            <div class="bank-card">
-                <div class="card-number">9860 3466 0765 9874</div>
-                <div class="card-holder">ADHAMJONOV OTABEK</div>
-                <div class="card-bank">Kapital Bank</div>
-            </div>
-            
-            <div class="instructions">
-                <h4><i class="fas fa-list-ol"></i> Buyurtma berish tartibi:</h4>
-                <ol>
-                    <li>Yuqoridagi bank kartasiga to'lov qiling</li>
-                    <li>To'lov chekining skrinshotini oling</li>
-                    <li>Quyidagi "✅ TO'LOV QILDIM" tugmasini bosing</li>
-                    <li>Chek rasmını Adminga yuboring</li>
-                </ol>
-            </div>
-            
-            <div class="checkout-buttons">
-                <button onclick="confirmPayment()" class="btn-primary">
-                    <i class="fas fa-check"></i> ✅ TO'LOV QILDIM
-                </button>
-                <button onclick="goBackToCart()" class="btn-secondary">
-                    <i class="fas fa-times"></i> ❌ BEKOR QILISH
-                </button>
-            </div>
+        <div class="order-total">
+            <strong>Jami to'lov:</strong>
+            <strong>${formatPrice(totalPrice)}</strong>
         </div>
     `;
     
     container.innerHTML = html;
 }
 
-window.confirmPayment = function() {
+// 13. TO'LOV FUNCTIONS
+function confirmPayment() {
     const orderId = 'ORD-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    // Create order
-    const currentOrder = {
+    // Platforma aniqlash
+    let platform = '';
+    if (cart.length > 0) {
+        const firstItem = cart[0];
+        if (firstItem.id.includes('tg_')) platform = 'Telegram';
+        else if (firstItem.id.includes('ig_')) platform = 'Instagram';
+        else if (firstItem.id.includes('pubg_')) platform = 'PUBG';
+        else platform = 'Noma'lum';
+    }
+    
+    const newOrder = {
         id: orderId,
         items: [...cart],
         total: totalPrice,
         date: new Date().toISOString(),
         status: 'pending',
-        user: localStorage.getItem('smm_userName') || 'Mehmon'
+        platform: platform
     };
     
-    // Add to orders
-    orders.push(currentOrder);
+    orders.push(newOrder);
     saveOrders();
     
-    // Clear cart
     cart = [];
     saveCart();
     updateCartCount();
     
-    // Show success message
-    showToast('✅ Buyurtmangiz qabul qilindi! Endi chekni adminga yuboring.', 'success');
+    // Botga yuborish
+    sendOrderToBot(orderId, totalPrice, platform);
     
-    // Show telegram send modal
-    showTelegramSendModal(currentOrder);
+    showToast('✅ Buyurtma qabul qilindi! Botga yuborildi.', 'success');
+    showOrderConfirmation(orderId, totalPrice, platform);
 }
 
-// ============================================
-// TELEGRAM SEND MODAL (BOTDAGIDEK)
-// ============================================
+function sendOrderToBot(orderId, totalPrice, platform) {
+    // O'Z TELEGRAM BOT TOKENINGIZNI VA CHAT IDINGIZNI KIRITING
+    const botToken = '8411740919:AAGLbOX3F-0sdlJXDbdGM0HY9CSaVRRGuLE'; // BotFather dan oling
+    const chatId = '8074394669'; // @userinfobot orqali oling
+    
+    const message = `🛒 YANGI BUYURTMA!\n\n` +
+                   `📱 Platforma: ${platform}\n` +
+                   `📋 Buyurtma raqami: ${orderId}\n` +
+                   `💰 Jami to'lov: ${formatPrice(totalPrice)}\n` +
+                   `📅 Sana: ${new Date().toLocaleString('uz-UZ')}\n\n` +
+                   `✅ Mijoz to'lov qildi va buyurtmani tasdiqladi.`;
+    
+    if (botToken !== 'YOUR_BOT_TOKEN_HERE' && chatId !== 'YOUR_CHAT_ID_HERE') {
+        sendTelegramMessage(botToken, chatId, message);
+    } else {
+        console.log('🤖 Botga yuboriladigan xabar:', message);
+        console.log('⚠️ Eslatma: Telegram bot token va chat ID ni sozlang!');
+    }
+    
+    showToast('✅ Buyurtma raqamingiz botga yuborildi!', 'success');
+}
 
-function showTelegramSendModal(order) {
+function sendTelegramMessage(botToken, chatId, message) {
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    
+    const data = {
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML'
+    };
+    
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('✅ Xabar botga yuborildi:', data);
+    })
+    .catch(error => {
+        console.error('❌ Xabar yuborishda xatolik:', error);
+    });
+}
+
+function showOrderConfirmation(orderId, totalPrice, platform) {
     let html = `
-        <div class="telegram-send-modal">
+        <div class="order-confirmation">
             <div class="confirmation-icon">
-                <i class="fab fa-telegram"></i>
+                <i class="fas fa-check-circle"></i>
             </div>
-            <h2>TO'LOV QILIB BO'LDINGIZ!</h2>
-            
-            <div class="order-info">
-                <p><strong>Buyurtma raqami:</strong> ${order.id}</p>
-                <p><strong>Jami to'lov:</strong> ${formatPrice(order.total)}</p>
-                <p><strong>Sana:</strong> ${new Date(order.date).toLocaleDateString('uz-UZ')}</p>
-            </div>
+            <h2>TO'LOV TASDIQLANDI!</h2>
+            <p>Buyurtma raqami: <strong>${orderId}</strong></p>
+            <p>Jami to'lov: <strong>${formatPrice(totalPrice)}</strong></p>
+            <p>Platforma: <strong>${platform}</strong></p>
+            <p>Sana: <strong>${new Date().toLocaleDateString('uz-UZ')}</strong></p>
             
             <div class="instructions">
-                <h3><i class="fas fa-exclamation-triangle"></i> ENDI CHEKNI ADMINGA YUBORING!</h3>
-                <p>To'lov chekini Telegram orqali @${ADMIN_USERNAME} ga yuboring:</p>
+                <h4><i class="fas fa-info-circle"></i> BUYURTMA RAQAMINGIZ BOTGA YUBORILDI!</h4>
                 
-                <div class="telegram-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <p>Quyidagi tugmani bosing</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <p>Telegram'da "Start" tugmasini bosing</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <p>To'lov chekini rasm sifatida yuboring</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <p>"Buyurtma raqami: ${order.id}" deb yozing</p>
-                    </div>
+                <div class="alert alert-info">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>BUYURTMA RAQAMINGIZNI SAQLAB QOYING!</strong>
                 </div>
                 
-                <div class="note-box">
-                    <p><i class="fas fa-info-circle"></i> <strong>Eslatma:</strong> Chekni faqat rasm shaklida yuboring. Xizmat 1-24 soat ichida boshlanadi.</p>
-                </div>
+                <h4><i class="fas fa-paper-plane"></i> Keyingi qadamlar:</h4>
+                <ol>
+                    <li>Buyurtma raqamingiz: <strong>${orderId}</strong></li>
+                    <li>Bu raqam botga avtomatik yuborildi</li>
+                    <li>Admin siz bilan bog'lanadi</li>
+                    <li>Xizmat 1-24 soat ichida boshlanadi</li>
+                </ol>
+                
+                <p class="note"><i class="fas fa-clock"></i> Agar 24 soat ichida admin bilan bog'lanmasangiz, quyidagi tugma orqali admin bilan bog'lanishingiz mumkin.</p>
             </div>
             
-            <div class="telegram-action">
-                <a href="https://t.me/${ADMIN_USERNAME}" target="_blank" class="btn-primary telegram-btn">
-                    <i class="fab fa-telegram"></i> CHEKNI @${ADMIN_USERNAME} GA YUBORISH
-                </a>
-            </div>
-            
-            <div class="modal-footer-buttons">
-                <button onclick="showHomeAfterOrder()" class="btn-secondary">
-                    <i class="fas fa-home"></i> BOSH SAHIFAGA QAYTISH
+            <div class="action-buttons">
+                <button onclick="contactAdmin('${orderId}')" class="btn-primary">
+                    <i class="fab fa-telegram"></i> ADMIN BILAN BOG'LANISH
+                </button>
+                <button onclick="copyOrderId('${orderId}')" class="btn-secondary">
+                    <i class="fas fa-copy"></i> BUYURTMA RAQAMINI NUSXALASH
+                </button>
+                <button onclick="goHome()" class="btn-outline">
+                    <i class="fas fa-home"></i> BOSH MENYUGA QAYTISH
                 </button>
             </div>
         </div>
@@ -1117,22 +917,55 @@ function showTelegramSendModal(order) {
     modal.style.display = 'flex';
 }
 
-window.showHomeAfterOrder = function() {
-    modal.style.display = 'none';
-    showSection('homeSection');
+// 14. ADMIN FUNCTIONS
+function contactAdmin(orderId = '') {
+    // O'Z TELEGRAM USERNOMINGIZNI KIRITING
+    const adminUsername = '@adhhamjonov'; // @ belgisisiz
+    
+    let message;
+    
+    if (orderId === 'buyurtmasiz') {
+        message = 'Assalomu alaykum! Men SMM Market veb-sahifasidan yozayapman. Savolim bor edi.';
+    } else {
+        message = `Assalomu alaykum! Men SMM Market veb-sahifasidan buyurtma berdim.\n\n` +
+                 `📋 Buyurtma raqami: ${orderId}\n` +
+                 `ℹ️ To'lov haqida ma'lumot kerak.`;
+    }
+    
+    const telegramUrl = `https://t.me/${adminUsername}?text=${encodeURIComponent(message)}`;
+    window.open(telegramUrl, '_blank');
+    
+    console.log('📱 Admin bilan bog\'lanish:', orderId);
 }
 
-// ============================================
-// ORDERS FUNCTIONS
-// ============================================
+function copyOrderId(orderId) {
+    navigator.clipboard.writeText(orderId)
+        .then(() => {
+            showToast(`✅ Buyurtma raqami nusxalandi: ${orderId}`, 'success');
+        })
+        .catch(err => {
+            console.error('❌ Nusxalashda xatolik:', err);
+            const tempInput = document.createElement('input');
+            tempInput.value = orderId;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(`✅ Buyurtma raqami nusxalandi: ${orderId}`, 'success');
+        });
+}
 
+// 15. ORDERS FUNCTIONS
 function showOrders() {
+    console.log('📋 Buyurtmalar sahifasiga o'tish');
     showSection('ordersSection');
     loadOrders();
 }
 
 function loadOrders() {
     const container = document.getElementById('ordersList');
+    
+    if (!container) return;
     
     if (orders.length === 0) {
         container.innerHTML = `
@@ -1156,6 +989,7 @@ function loadOrders() {
             case 'processing': statusText = 'Jarayonda'; statusClass = 'status-processing'; break;
             case 'completed': statusText = 'Yakunlangan'; statusClass = 'status-completed'; break;
             case 'cancelled': statusText = 'Bekor qilingan'; statusClass = 'status-cancelled'; break;
+            default: statusText = 'Kutilmoqda'; statusClass = 'status-pending';
         }
         
         html += `
@@ -1163,7 +997,7 @@ function loadOrders() {
                 <div>
                     <h4>${order.id}</h4>
                     <p>${new Date(order.date).toLocaleDateString('uz-UZ')}</p>
-                    <p>${order.items.length} ta xizmat</p>
+                    <p>${order.platform || 'Noma\'lum'} - ${order.items.length} ta xizmat</p>
                 </div>
                 <div>
                     <div class="${statusClass} order-status">${statusText}</div>
@@ -1180,10 +1014,7 @@ function saveOrders() {
     localStorage.setItem('smm_orders', JSON.stringify(orders));
 }
 
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
+// 16. UTILITY FUNCTIONS
 function formatPrice(price) {
     return price.toLocaleString('uz-UZ') + ' so\'m';
 }
@@ -1194,24 +1025,40 @@ function showToast(message, type = 'info') {
 
 function loadUserName() {
     const userName = localStorage.getItem('smm_userName') || 'Mehmon';
-    document.getElementById('userName').textContent = userName;
+    const userNameElement = document.getElementById('userName');
+    if (userNameElement) {
+        userNameElement.textContent = userName;
+    }
 }
 
-// ============================================
-// SAMPLE DATA (for first time users)
-// ============================================
+function checkFirstTimeVisit() {
+    if (!localStorage.getItem('smm_firstVisit')) {
+        setTimeout(() => {
+            const name = prompt('Ismingizni kiriting:', 'Mehmon');
+            if (name && name.trim() !== '') {
+                localStorage.setItem('smm_userName', name);
+                const userNameElement = document.getElementById('userName');
+                if (userNameElement) {
+                    userNameElement.textContent = name;
+                }
+            }
+        }, 1000);
+        localStorage.setItem('smm_firstVisit', 'true');
+    }
+}
 
-if (!localStorage.getItem('smm_orders')) {
+// 17. SAMPLE DATA
+if (!localStorage.getItem('smm_orders') || JSON.parse(localStorage.getItem('smm_orders')).length === 0) {
     orders = [
         {
             id: 'ORD-123456',
             items: [
-                { id: 'tg_premium_1', name: 'Telegram Premium - 1 Oylik Premium', price: 50000, quantity: 1 }
+                { id: 'tg_premium_1', name: 'Telegram Premium - 1 Oylik', price: 50000, quantity: 1 }
             ],
             total: 50000,
-            date: '2024-01-15T10:30:00Z',
+            date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
             status: 'completed',
-            user: 'Foydalanuvchi'
+            platform: 'Telegram'
         },
         {
             id: 'ORD-123457',
@@ -1219,44 +1066,39 @@ if (!localStorage.getItem('smm_orders')) {
                 { id: 'ig_likes_1', name: 'Instagram Layklar - 1000 like', price: 5000, quantity: 2 }
             ],
             total: 10000,
-            date: '2024-01-18T14:45:00Z',
+            date: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
             status: 'processing',
-            user: 'Foydalanuvchi'
+            platform: 'Instagram'
+        },
+        {
+            id: 'ORD-123458',
+            items: [
+                { id: 'pubg_1', name: 'PUBG UC - 🇺🇸 60 UC', price: 14000, quantity: 1 }
+            ],
+            total: 14000,
+            date: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+            status: 'completed',
+            platform: 'PUBG'
         }
     ];
     saveOrders();
 }
 
-// ============================================
-// TEST FUNCTION - Savatchaga test qo'shish
-// ============================================
-
-window.testAddToCart = function() {
-    console.log('🧪 Test: Savatchaga qo\'shish');
-    
-    // Test mahsulot
-    const testProduct = {
-        id: 'test_1',
-        name: 'Test Mahsulot',
-        price: 10000
-    };
-    
-    addToCart(testProduct.id, testProduct.name, testProduct.price);
-}
-
-// ============================================
-// GLOBAL FUNCTIONS FOR HTML
-// ============================================
-
+// 18. GLOBAL FUNCTIONS FOR HTML
 window.showCategory = showCategory;
 window.showTelegramService = showTelegramService;
 window.showInstagramService = showInstagramService;
+window.addToCart = addToCart;
+window.updateQuantity = updateQuantity;
+window.removeFromCart = removeFromCart;
 window.checkout = checkout;
+window.confirmPayment = confirmPayment;
 window.goHome = goHome;
 window.goBackToServices = goBackToServices;
 window.goBackToTelegram = goBackToTelegram;
 window.goBackToInstagram = goBackToInstagram;
 window.goBackToCart = goBackToCart;
+window.contactAdmin = contactAdmin;
+window.copyOrderId = copyOrderId;
 
-console.log('🎉 SMM Market veb-ilovasi tayyor! Barcha funksiyalar ishlaydi.');
-console.log('🔧 Savatchaga qo\'shish funksiyasi mavjud:', typeof addToCart);
+console.log('🎉 SMM Market JavaScript kodi tayyor! (1000+ qator)');
