@@ -177,8 +177,8 @@
                     <p>Yuqori sifatli obunachilar - Aktiv va haqiqiy foydalanuvchilar - 30 kun kafolat</p>
                 </div>
                 
-                <div id="telegramTariffs" class="tariffs-grid">
-                    <!-- Premium tariffs will be loaded here -->
+                <div id="telegramPremiumTariffs" class="tariffs-grid">
+                    <!-- Premium tariflari bu yerda yuklanadi -->
                 </div>
             </div>
         </section>
@@ -190,12 +190,12 @@
                     <button onclick="goBackToTelegram()" class="btn-back-small">
                         <i class="fas fa-arrow-left"></i> Orqaga
                     </button>
-                    <h2><i class="fas fa-gem"></i> TELEGRAM STARS</h2>
-                    <p>Tezkor yetkazib berish - Barcha kanallar va guruhlar uchun - 100% xavfsiz</p>
+                    <h2><i class="fas fa-gem"></i> TELEGRAM STARS (YULDUZLAR)</h2>
+                    <p>Tez va ishonchli yetkazib berish - Barcha kanallar va guruhlar uchun - 100% xavfsiz</p>
                 </div>
                 
                 <div id="telegramStarsTariffs" class="tariffs-grid">
-                    <!-- Stars tariffs will be loaded here -->
+                    <!-- Stars tariflari bu yerda yuklanadi -->
                 </div>
             </div>
         </section>
@@ -207,12 +207,12 @@
                     <button onclick="goBackToTelegram()" class="btn-back-small">
                         <i class="fas fa-arrow-left"></i> Orqaga
                     </button>
-                    <h2><i class="fas fa-gift"></i> TELEGRAM GIFT</h2>
+                    <h2><i class="fas fa-gift"></i> TELEGRAM GIFT (SOVG'ALAR)</h2>
                     <p>Darhol yetkazib berish - Eng yangi va trend sovg'alar - Barcha uchun</p>
                 </div>
                 
                 <div id="telegramGiftTariffs" class="tariffs-grid">
-                    <!-- Gift tariffs will be loaded here -->
+                    <!-- Gift tariflari bu yerda yuklanadi -->
                 </div>
             </div>
         </section>
@@ -264,7 +264,7 @@
             </div>
         </section>
 
-        <!-- Instagram Tariffs Sections -->
+        <!-- Instagram Guaranteed -->
         <section id="instagramGuaranteedSection" class="section">
             <div class="container">
                 <div class="section-header">
@@ -277,6 +277,57 @@
                 
                 <div id="instagramGuaranteedTariffs" class="tariffs-grid">
                     <!-- Instagram guaranteed tariffs -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Cheap -->
+        <section id="instagramCheapSection" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <button onclick="goBackToInstagram()" class="btn-back-small">
+                        <i class="fas fa-arrow-left"></i> Orqaga
+                    </button>
+                    <h2><i class="fas fa-wallet"></i> INSTAGRAM ARZON OBUNACHILAR</h2>
+                    <p>Hamyonbop narxlar - O'rtacha sifat - Tezkor yetkazib berish</p>
+                </div>
+                
+                <div id="instagramCheapTariffs" class="tariffs-grid">
+                    <!-- Instagram cheap tariffs -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Views -->
+        <section id="instagramViewsSection" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <button onclick="goBackToInstagram()" class="btn-back-small">
+                        <i class="fas fa-arrow-left"></i> Orqaga
+                    </button>
+                    <h2><i class="fas fa-eye"></i> INSTAGRAM KO'RISHLAR</h2>
+                    <p>Postlarni ommalashtirish - Organic ko'rishlar - Profil faolligini oshirish</p>
+                </div>
+                
+                <div id="instagramViewsTariffs" class="tariffs-grid">
+                    <!-- Instagram views tariffs -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Likes -->
+        <section id="instagramLikesSection" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <button onclick="goBackToInstagram()" class="btn-back-small">
+                        <i class="fas fa-arrow-left"></i> Orqaga
+                    </button>
+                    <h2><i class="fas fa-heart"></i> INSTAGRAM LAYKLAR</h2>
+                    <p>Interaktivlikni oshirish - Post reytingini yaxshilash - Tezkor yetkazib berish</p>
+                </div>
+                
+                <div id="instagramLikesTariffs" class="tariffs-grid">
+                    <!-- Instagram likes tariffs -->
                 </div>
             </div>
         </section>
@@ -337,36 +388,7 @@
                     </div>
                     
                     <div class="payment-info">
-                        <h3><i class="fas fa-credit-card"></i> TO'LOV KARTASI:</h3>
-                        <div class="bank-card">
-                            <div class="card-number">9860 3466 0765 9874</div>
-                            <div class="card-holder">ADHAMJONOV OTABEK</div>
-                        </div>
-                        
-                        <div class="instructions">
-                            <h4><i class="fas fa-list-ol"></i> Buyurtma berish tartibi:</h4>
-                            <ol>
-                                <li>Yuqoridagi bank kartasiga to'lov qiling</li>
-                                <li>To'lov chekining skrinshotini oling</li>
-                                <li>"✅ To'lov qildim" tugmasini bosing</li>
-                                <li>Chek rasmını Adminga yuboring</li>
-                            </ol>
-                        </div>
-                        
-                        <div class="upload-section">
-                            <h4><i class="fas fa-receipt"></i> To'lov chekini yuklang:</h4>
-                            <input type="file" id="receiptUpload" accept="image/*" onchange="previewReceipt(event)">
-                            <div id="receiptPreview"></div>
-                        </div>
-                        
-                        <div class="checkout-buttons">
-                            <button onclick="confirmPayment()" class="btn-primary">
-                                <i class="fas fa-check"></i> ✅ TO'LOV QILDIM
-                            </button>
-                            <button onclick="goBackToCart()" class="btn-secondary">
-                                <i class="fas fa-times"></i> ❌ BEKOR QILISH
-                            </button>
-                        </div>
+                        <!-- Payment info will be loaded here -->
                     </div>
                 </div>
             </div>
